@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plastic Sort ♻️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==================== HOME ==================== -->
+
+    <section id="startScreen" class="screen active">
+
+        <div class="start-card">
+
+            <div class="logo">♻️</div>
+
+            <h1>PLASTIC SORT</h1>
+
+            <p>เกมแยกขยะพลาสติก 7 ชนิด</p>
+
+            
+            <div class="how-to">
+
+                <div>
+                    <span>🗑️</span>
+                    <p>ลากขยะไปยังถังที่ถูกต้อง</p>
+                </div>
+
+                <div>
+                    <span>✅</span>
+                    <p>ถูก +10 คะแนน</p>
+                </div>
+
+                <div>
+                    <span>❌</span>
+                    <p>ผิด -5 คะแนน</p>
+                </div>
+
+            </div>
+                    <div class="player-form">
+
+            <div class="input-group">
+
+                <label for="playerName">
+                    ชื่อ
+                </label>
+
+                <input
+                    type="text"
+                    id="playerName"
+                    placeholder="กรอกชื่อของคุณ"
+                    maxlength="20"
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="playerClass">
+                    ชั้น
+                </label>
+
+                <input
+                    type="text"
+                    id="playerClass"
+                    placeholder="เช่น ม.5/1"
+                    maxlength="10"
+                >
+
+            </div>
+
+        </div>
+
+
+            <button id="startBtn" class="main-btn">
+                เริ่มเกม
+            </button>
+
+
+            <!-- PLAY COUNT -->
+
+            <div class="play-count">
+
+                <span>🎮</span>
+
+                เว็บนี้ถูกเล่นไปแล้ว
+
+                <strong id="totalPlays">0</strong>
+
+                ครั้ง
+
+            </div>
+
+
+            <!-- LEADERBOARD -->
+
+            <div class="leaderboard">
+
+                <div class="leaderboard-title">
+                    🏆 LEADERBOARD
+                </div>
+
+                <div id="leaderboardList">
+
+                    <!-- JS สร้างตรงนี้ -->
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================== GAME ==================== -->
+
+    <section id="gameScreen" class="screen">
+
+        <header class="game-header">
+
+            <div class="header-title">
+                ♻️ Plastic Sort
+            </div>
+
+
+            <div class="stats">
+
+                <div class="stat">
+                    <span>⭐</span>
+                    <strong id="score">0</strong>
+                </div>
+
+                <div class="stat">
+                    <span>⏱️</span>
+                    <strong id="timer">60</strong>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <main class="game-container">
+
+
+            <div class="trash-area">
+
+                <p class="instruction">
+                    ลากขยะไปใส่ถังให้ถูกต้อง
+                </p>
+
+
+                <div
+                    id="trashCard"
+                    class="trash-card"
+                    draggable="true"
+                >
+
+                    <div id="trashEmoji" class="trash-emoji">
+                        🧴
+                    </div>
+
+                    <h2 id="trashName">
+                        ขวดน้ำ
+                    </h2>
+
+                    <div id="trashCode" class="trash-code">
+                        ♻️ PET 1
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="bins-section">
+
+                <h3>เลือกถังขยะ</h3>
+
+                <div
+                    id="bins"
+                    class="bins-grid"
+                ></div>
+
+            </div>
+
+        </main>
+
+    </section>
+
+
+
+    <!-- ==================== RESULT ==================== -->
+
+    <section id="resultScreen" class="screen">
+
+        <div class="result-card">
+
+            <div class="result-icon">
+                🎉
+            </div>
+
+            <h1>GAME OVER!</h1>
+
+            <p>คะแนนของคุณ</p>
+
+
+            <div
+                id="finalScore"
+                class="final-score"
+            >
+                0
+            </div>
+
+
+            <div class="result-info">
+
+                <div>
+                    <span>✅</span>
+
+                    <strong id="correctCount">
+                        0
+                    </strong>
+
+                    <small>
+                        ตอบถูก
+                    </small>
+                </div>
+
+
+                <div>
+                    <span>❌</span>
+
+                    <strong id="wrongCount">
+                        0
+                    </strong>
+
+                    <small>
+                        ตอบผิด
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="result-buttons">
+
+                <button
+                    id="restartBtn"
+                    class="main-btn"
+                >
+                    เล่นอีกครั้ง
+                </button>
+
+
+                <button
+                    id="homeBtn"
+                    class="home-btn"
+                >
+                    ← กลับหน้าแรก
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FEEDBACK -->
+
+    <div
+        id="feedback"
+        class="feedback"
+    ></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
